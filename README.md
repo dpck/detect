@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/%40depack%2Fdetect.svg)](https://npmjs.org/package/@depack/detect)
 
-`@depack/detect` is Detects Dependencies In The Source File.
+`@depack/detect` Detects Dependencies In The Source File.
 
 ```sh
 yarn add -E @depack/detect
@@ -33,15 +33,10 @@ Returns the paths or names of packages that are imported in the source code.
 
 _For example, for the given source file_
 ```js
-// returns the correct output
 import test from 'test'
 import test2, * as test3 from 'test2'
 import 'test3'
 export { default as Test } from 'test4'
-
-/* expected */
-["test", "test2", "test3", "test4"]
-/**/
 ```
 
 _It will produce the following output_
