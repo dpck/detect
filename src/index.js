@@ -1,26 +1,25 @@
-import { debuglog } from 'util'
+import mismatch from 'mismatch'
 
-const LOG = debuglog('@depack/detect')
+const RE = /^ *import(?:\s+(?:[^\s,]+)\s*,?)?(?:\s*{(?:[^}]+)})?\s+from\s+(['"])(.+?)\1/gm
+const RE2 = /^ *import\s+(?:.+?\s*,\s*)?\*\s+as\s+.+?\s+from\s+(['"])(.+?)\1/gm
+const RE3 = /^ *import\s+(['"])(.+?)\1/gm
+const RE4 = /^ *export\s+{[^}]+?}\s+from\s+(['"])(.+?)\1/gm
 
 /**
- * Detects Dependencies In The Source File.
- * @param {Config} [config] Options for the program.
- * @param {boolean} [config.shouldRun=true] A boolean option. Default `true`.
- * @param {string} config.text A text to return.
+ * Returns the names of the modules imported with `import` and `export` statements.
+ * @param {string} source The source to detect matches in.
  */
-export default async function detect(config = {}) {
-  const {
-    shouldRun = true,
-    text,
-  } = config
-  if (!shouldRun) return
-  LOG('@depack/detect called with %s', text)
-  return text
+const getMatches = (source) => {
+  const res = [RE, RE2, RE3, RE4].reduce((acc, re) => {
+    const m = mismatch(re, source, ['q', 'from'])
+      .map(a => a['from'])
+    return [...acc, ...m]
+  }, [])
+  return res
 }
 
-/* documentary types/index.xml */
-/**
- * @typedef {Object} Config Options for the program.
- * @prop {boolean} [shouldRun=true] A boolean option. Default `true`.
- * @prop {string} text A text to return.
- */
+export default getMatches
+
+export const RES = {
+  RE, RE2, RE3, RE4,
+}

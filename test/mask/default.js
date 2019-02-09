@@ -3,13 +3,12 @@ import Context from '../context'
 import detect from '../../src'
 
 const ts = makeTestSuite('test/result', {
-  async getResults(input) {
-    const res = await detect({
-      text: input,
-    })
+  getResults(input) {
+    const res = detect(input)
     return res
   },
+  jsonProps: ['expected'],
   context: Context,
 })
 
-// export default ts
+export default ts
