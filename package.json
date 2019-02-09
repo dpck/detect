@@ -1,6 +1,6 @@
 {
   "name": "@depack/detect",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Detects Dependencies In The Source File.",
   "main": "build/index.js",
   "module": "src/index.js",
