@@ -39,6 +39,7 @@
   },
   "homepage": "https://github.com/dpck/detect#readme",
   "devDependencies": {
+    "@wrote/read": "1.0.2",
     "alamode": "1.7.3",
     "documentary": "1.21.1",
     "eslint-config-artdeco": "1.0.1",

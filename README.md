@@ -1,6 +1,6 @@
 # @depack/detect
 
-[![npm version](https://badge.fury.io/js/@depack/detect.svg)](https://npmjs.org/package/@depack/detect)
+[![npm version](https://badge.fury.io/js/%40depack%2Fdetect.svg)](https://npmjs.org/package/@depack/detect)
 
 `@depack/detect` is Detects Dependencies In The Source File.
 
@@ -12,8 +12,7 @@ yarn add -E @depack/detect
 
 - [Table Of Contents](#table-of-contents)
 - [API](#api)
-- [`detect(arg1: string, arg2?: boolean)`](#mynewpackagearg1-stringarg2-boolean-void)
-  * [`Config`](#type-config)
+- [`detect(source: string): Array<string>`](#detectsource-string-arraystring)
 - [Copyright](#copyright)
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/0.svg?sanitize=true"></a></p>
@@ -28,38 +27,64 @@ import detect from '@depack/detect'
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/1.svg?sanitize=true"></a></p>
 
-## `detect(`<br/>&nbsp;&nbsp;`arg1: string,`<br/>&nbsp;&nbsp;`arg2?: boolean,`<br/>`): void`
+## `detect(`<br/>&nbsp;&nbsp;`source: string,`<br/>`): Array<string>`
 
-Call this function to get the result you want.
+Returns the paths or names of packages that are imported in the source code.
 
-__<a name="type-config">`Config`</a>__: Options for the program.
+_For example, for the given source file_
+```js
+// returns the correct output
+import test from 'test'
+import test2, * as test3 from 'test2'
+import 'test3'
+export { default as Test } from 'test4'
 
-|   Name    |   Type    |    Description    | Default |
-| --------- | --------- | ----------------- | ------- |
-| shouldRun | _boolean_ | A boolean option. | `true`  |
-| __text*__ | _string_  | A text to return. | -       |
+/* expected */
+["test", "test2", "test3", "test4"]
+/**/
+```
+
+_It will produce the following output_
 
 ```js
 /* yarn example/ */
 import detect from '@depack/detect'
+import read from '@wrote/read'
 
 (async () => {
-  const res = await detect({
-    text: 'example',
-  })
+  const source = await read('example/source.js')
+  const res = detect(source)
   console.log(res)
 })()
 ```
-```
-example
+```js
+[ 'test', 'test2', 'test3', 'test4' ]
 ```
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/2.svg?sanitize=true"></a></p>
 
 ## Copyright
 
-(c) [Art Deco][1] 2019
-
-[1]: https://artd.eco/depack
+<table>
+  <tr>
+    <th>
+      <a href="https://artd.eco">
+        <img src="https://raw.githubusercontent.com/wrote/wrote/master/images/artdeco.png" alt="Art Deco" />
+      </a>
+    </th>
+    <th>
+      © <a href="https://artd.eco">Art Deco</a> for <a href="https://artd.eco/depack">Depack</a>
+      2019
+    </th>
+    <th>
+      <a href="https://www.technation.sucks" title="Tech Nation Visa">
+        <img src="https://raw.githubusercontent.com/artdecoweb/www.technation.sucks/master/anim.gif" alt="Tech Nation Visa" />
+      </a>
+    </th>
+    <th>
+      <a href="https://www.technation.sucks">Tech Nation Visa Sucks</a>
+    </th>
+  </tr>
+</table>
 
 <p align="center"><a href="#table-of-contents"><img src=".documentary/section-breaks/-1.svg?sanitize=true"></a></p>

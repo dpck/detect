@@ -8,18 +8,20 @@ import detect from '@depack/detect'
 
 %~%
 
-```## detect
+```## detect => Array<string>
 [
-  ["arg1", "string"],
-  ["arg2?", "boolean"]
+  ["source", "string"]
 ]
 ```
 
-Call this function to get the result you want.
+Returns the paths or names of packages that are imported in the source code.
 
-%TYPEDEF types/index.xml%
+_For example, for the given source file_
+%EXAMPLE: example/source.js%
+
+_It will produce the following output_
 
 %EXAMPLE: example/example.js, ../src => @depack/detect%
-%FORK example example/example%
+%FORK-js example example/example%
 
 %~%
