@@ -17,11 +17,11 @@ import detect from '@depack/detect'
 Returns the paths or names of packages that are imported in the source code.
 
 _For example, for the given source file_
-%EXAMPLE: example/source.js%
+%EXAMPLE: example/source%
 
 _It will produce the following output_
 
-%EXAMPLE: example/example.js, ../src => @depack/detect%
-%FORK-js example example/example%
+%EXAMPLE: example/example, ../src => @depack/detect%
+%FORK-js example/example%
 
 %~%

@@ -1,8 +1,8 @@
-import { makeTestSuite } from 'zoroaster'
+import makeTestSuite from '@zoroaster/mask'
 import Context from '../context'
 import detect from '../../src'
 
-const ts = makeTestSuite('test/result', {
+export default makeTestSuite('test/result', {
   getResults(input) {
     const res = detect(input)
     return res
@@ -10,5 +10,3 @@ const ts = makeTestSuite('test/result', {
   jsonProps: ['expected'],
   context: Context,
 })
-
-export default ts

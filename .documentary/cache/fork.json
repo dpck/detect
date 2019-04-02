@@ -1,0 +1,12 @@
+{
+  "example/example": {
+    "mtime": 1549730288000,
+    "analysis": [
+      "src/index.js 1549730184000",
+      "@wrote/read 1.0.2",
+      "mismatch 1.1.0"
+    ],
+    "stdout": "[ 'test', 'test2', 'test3', 'test4' ]\n",
+    "stderr": ""
+  }
+}
