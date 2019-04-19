@@ -21,7 +21,7 @@ _For example, for the given source file_
 
 _It will produce the following output_
 
-%EXAMPLE: example/example, ../src => @depack/detect%
-%FORK-js example/example%
+%EXAMPLE: example, ../src => @depack/detect%
+%FORK-js example%
 
 %~%
