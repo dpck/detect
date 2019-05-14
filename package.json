@@ -40,13 +40,13 @@
   "homepage": "https://github.com/dpck/detect#readme",
   "devDependencies": {
     "@wrote/read": "^1.0.4",
-    "alamode": "^1.9.3",
-    "documentary": "^1.23.4",
+    "alamode": "^2.2.0",
+    "documentary": "^1.27.2",
     "eslint-config-artdeco": "1.0.1",
     "yarn-s": "1.1.0",
-    "zoroaster": "^3.11.6"
+    "zoroaster": "^4.1.1-alpha"
   },
   "dependencies": {
-    "mismatch": "^1.1.1"
+    "mismatch": "^1.2.0"
   }
 }
