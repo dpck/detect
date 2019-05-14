@@ -1,3 +1,9 @@
+## 14 May 2019
+
+### [1.1.0](https://github.com/dpck/detect/compare/v1.0.2...v1.1.0)
+
+- [feature] Detect `export * from '@externs/preact'`.
+
 ## 19 April 2019
 
 ### [1.0.2](https://github.com/dpck/detect/compare/v1.0.1...v1.0.2)

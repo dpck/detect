@@ -3,7 +3,7 @@ let mismatch = require('mismatch'); if (mismatch && mismatch.__esModule) mismatc
 const RE = /^ *import(?:\s+(?:[^\s,]+)\s*,?)?(?:\s*{(?:[^}]+)})?\s+from\s+(['"])(.+?)\1/gm
 const RE2 = /^ *import\s+(?:.+?\s*,\s*)?\*\s+as\s+.+?\s+from\s+(['"])(.+?)\1/gm
 const RE3 = /^ *import\s+(['"])(.+?)\1/gm
-const RE4 = /^ *export\s+{[^}]+?}\s+from\s+(['"])(.+?)\1/gm
+const RE4 = /^ *export\s+(?:{[^}]+?}|\*)\s+from\s+(['"])(.+?)\1/gm
 
 /**
  * Returns the names of the modules imported with `import` and `export` statements.

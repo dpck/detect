@@ -7,3 +7,10 @@ export { default as Test } from 'test4'
 /* expected */
 ["test", "test2", "test3", "test4"]
 /**/
+
+// detects export * from
+export * from '@externs/preact'
+
+/* expected */
+["@externs/preact"]
+/**/
